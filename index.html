@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Puro - Proyecto de Inversión Jabones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(to bottom, #0f172a 0%, #020617 30%, #064e3b 100%);
+            background-attachment: fixed;
+            color: #f1f5f9;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .nav-scrolled {
+            background: rgba(15, 23, 42, 0.9);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .brand-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        /* Animación suave para las secciones */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navegación -->
+    <nav id="navbar" class="fixed w-full transition-all duration-300 z-50 px-6 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-tr from-sky-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-leaf text-white text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-extrabold tracking-tighter">
+                    <span class="brand-gradient">Aroma Puro</span>
+                </h1>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#presentacion" class="hover:text-sky-400 transition-colors uppercase">Proyecto</a>
+                <a href="#solucion" class="hover:text-sky-400 transition-colors uppercase">Tecnología</a>
+                <a href="#inversion" class="hover:text-sky-400 transition-colors uppercase">Finanzas</a>
+                <a href="#contacto" class="bg-sky-600/20 border border-sky-500/50 text-sky-400 px-6 py-2 rounded-full hover:bg-sky-500 hover:text-white transition-all duration-300">
+                    Contactar <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="presentacion" class="relative pt-48 pb-32 px-6 overflow-hidden">
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 right-0 -z-10 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 -z-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-3/5 space-y-8 text-center md:text-left">
+                <div class="inline-flex items-center space-x-2 bg-sky-500/10 border border-sky-500/20 px-4 py-2 rounded-full">
+                    <span class="flex h-2 w-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    <span class="text-sky-400 text-xs font-bold uppercase tracking-widest">Inversión 2026 - TrimTime Enabled</span>
+                </div>
+                
+                <h2 class="text-6xl md:text-7xl font-black text-white leading-[1.1]">
+                    Higiene <span class="brand-gradient italic">Inteligente</span> y Artesanal.
+                </h2>
+                
+                <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+                    Elevamos la jabonería tradicional al siguiente nivel mediante <strong class="text-white">TrimTime</strong>, nuestro ecosistema digital de optimización de producción y ventas.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                    <a href="#inversion" class="w-full sm:w-auto bg-gradient-to-r from-sky-600 to-sky-500 text-white px-10 py-4 rounded-2xl font-bold shadow-2xl shadow-sky-900/40 hover:scale-105 transition-transform">
+                        Explorar Inversión
+                    </a>
+                    <a href="#solucion" class="w-full sm:w-auto bg-white/5 border border-white/10 px-10 py-4 rounded-2xl font-bold hover:bg-white/10 transition-colors">
+                        Saber más
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-2/5 relative">
+                <div class="relative z-10 w-full aspect-square rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl">
+                    <img src="Imagenes/Aroma Puro.png" alt="Jabones" class="object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <p class="text-white font-bold text-xl">Línea Orgánica</p>
+                        <p class="text-emerald-400 text-sm">100% Biodegradable</p>
+                    </div>
+                </div>
+                <!-- Elemento flotante -->
+                <div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-3xl z-20 hidden lg:block border-emerald-500/30">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-emerald-500/20 p-3 rounded-2xl">
+                            <i class="fas fa-chart-line text-emerald-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">ROI Proyectado</p>
+                            <p class="text-2xl font-black text-white">+24% Anual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas Rápidas -->
+    <section class="py-12 bg-white/5 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <p class="text-4xl font-black text-white">45%</p>
+                <p class="text-sky-400 text-xs font-bold uppercase mt-1">Margen Neto</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-black text-white">12k</p>
+                <p class="text-sky-400 text-xs font-bold uppercase mt-1">Unidades/Mes</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-black text-white">100%</p>
+                <p class="text-sky-400 text-xs font-bold uppercase mt-1">Eco-Friendly</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-black text-white">24/7</p>
+                <p class="text-sky-400 text-xs font-bold uppercase mt-1">Gestión Cloud</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión con Estilo Moderno -->
+    <section class="py-24 px-6 reveal">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="p-12 glass-card rounded-[2.5rem] relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-bullseye text-9xl text-sky-400"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-6 text-white flex items-center">
+                    <span class="w-12 h-1 h-1 bg-sky-500 mr-4 rounded-full"></span> Misión
+                </h3>
+                <p class="text-slate-300 text-xl leading-relaxed font-light italic">
+                    "Elaborar productos de higiene y cuidado personal de forma artesanal, utilizando ingredientes naturales de alta calidad que respeten la salud de la piel y el medio ambiente. Buscamos transformar la rutina del baño en una experiencia sensorial única, promoviendo el bienestar y el consumo consciente en cada hogar venezolano."
+                </p>
+            </div>
+            <div class="p-12 glass-card rounded-[2.5rem] relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-eye text-9xl text-emerald-400"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-6 text-white flex items-center">
+                    <span class="w-12 h-1 h-1 bg-emerald-500 mr-4 rounded-full"></span> Visión
+                </h3>
+                <p class="text-slate-300 text-xl leading-relaxed font-light">
+                    "Ser la marca líder en jabonería artesanal en Venezuela para el año 2030, reconocida por nuestra excelencia en diseño, pureza de ingredientes y compromiso sostenible. Aspiramos a expandir nuestra esencia a mercados internacionales, llevando la riqueza natural de nuestra tierra en cada barra de jabón."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Caso de Estudio TrimTime -->
+    <section id="caso-estudio" class="py-24 px-6 bg-slate-950/50 reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-sm font-black text-sky-500 uppercase tracking-[0.3em] mb-4">Caso de Estudio</h2>
+                <p class="text-4xl md:text-5xl font-extrabold text-white">Proyecto TrimTime</p>
+                <div class="mt-6 inline-block bg-white px-6 py-2 rounded-lg">
+                    <p class="text-slate-900 font-bold tracking-tight">Implementación: <span class="text-blue-700">Alimentos Polar</span></p>
+                </div>
+                <p class="mt-6 text-slate-400 text-lg italic">
+                    "Sistema de desarrollo y control de procesos para la planta de <strong>Jabones El Tigre</strong>, optimizando la eficiencia operativa mediante software a medida."
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Gestión de Planta -->
+                <div class="p-10 glass-card rounded-3xl hover:border-sky-500/50 transition-all border-l-4 border-sky-500">
+                    <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white uppercase tracking-tight italic">Backend Architecture</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4 text-sm">
+                        Desarrollado con PHP y Express.js, el sistema gestiona en tiempo real la producción de jabones, integrando sensores IoT para monitorear cada etapa del proceso.
+                    </p>
+                    <div class="text-xs font-mono text-sky-500">PROCESAMIENTO L14</div>
+                </div>
+
+                <!-- Backend -->
+                <div class="p-10 glass-card rounded-3xl hover:border-emerald-500/50 transition-all border-l-4 border-emerald-500">
+                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Database Design</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4 text-sm">
+                        Esquema relacionado en MySQL optimizado para el almacenamiento eficiente de datos de producción, permitiendo consultas rápidas y análisis detallados.
+                    </p>
+                    <div class="text-xs font-mono text-emerald-500">DB: POSTGRESQL / PRISMA</div>
+                </div>
+
+                <!-- Dashboard -->
+                <div class="p-10 glass-card rounded-3xl hover:border-purple-500/50 transition-all border-l-4 border-purple-500">
+                    <div class="w-14 h-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Frontend Interface</h4>
+                    <p class="text-slate-400 leading-relaxed mb-4 text-sm">
+                        Desarrollando la interfaz con Tailwind CSS, Diseño adaptativo a moviles.
+                    </p>
+                    <div class="text-xs font-mono text-purple-500">AWS / DOCKER CLOUD</div>
+                </div>
+            </div>
+
+            <!-- Métrica de Impacto -->
+            <div class="mt-16 p-8 glass-card rounded-[2rem] flex flex-col md:flex-row items-center justify-around text-center gap-8">
+                <div>
+                    <p class="text-5xl font-black brand-gradient">15%</p>
+                    <p class="text-slate-400 text-xs font-bold uppercase mt-2">Ahorro en Merma</p>
+                </div>
+                <div class="hidden md:block h-12 w-px bg-white/10"></div>
+                <div>
+                    <p class="text-5xl font-black brand-gradient">24/7</p>
+                    <p class="text-slate-400 text-xs font-bold uppercase mt-2">Uptime Sistema</p>
+                </div>
+                <div class="hidden md:block h-12 w-px bg-white/10"></div>
+                <div>
+                    <p class="text-5xl font-black brand-gradient">+1M</p>
+                    <p class="text-slate-400 text-xs font-bold uppercase mt-2">Barras Monitoreadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfil Estudiante -->
+    <section class="py-24 px-6 reveal">
+        <div class="max-w-5xl mx-auto glass-card rounded-[3rem] overflow-hidden flex flex-col md:flex-row items-stretch border-sky-500/20">
+            <div class="md:w-2/5 relative min-h-[300px]">
+                <img src="Imagenes/YO.jpg" alt="Desarrollador" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/40 md:to-transparent"></div>
+            </div>
+            <div class="md:w-3/5 p-12 md:p-16 flex flex-col justify-center">
+                <h4 class="text-sky-400 font-bold uppercase tracking-widest text-sm mb-2">Fundador del Proyecto</h4>
+                <h2 class="text-4xl font-black text-white mb-6">Carlos Antonio Graterol</h2>
+                <h3 class="text-2xl font-semibold text-white mb-4">C.I: 28.774.325 / ING. SISTEMA</h3>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                    Estudiante de 8vo Semestre (UNEFA). Mi enfoque profesional se centra en el desarrollo de soluciones tecnológicas innovadoras que optimicen procesos industriales.<br> Como lider técnico del proyecto TrimTime, he implementado sistemas de gestión y análisis de datos que van a mejorar significativamente la eficiencia operativa en entornos de producción.<br> Mi pasión por la tecnología y la mejora continua me impulsa a buscar siempre nuevas formas de integrar soluciones digitales en procesos tradicionales.
+                </p>
+                <h4 class="text-2xl font-semibold text-white mb-4">Habilidades Técnicas</h4>
+                <div class="flex flex-wrap gap-4">
+                    <span class="bg-white/5 px-4 py-2 rounded-lg text-xs font-mono text-sky-300">#NodeJS</span>
+                    <span class="bg-white/5 px-4 py-2 rounded-lg text-xs font-mono text-emerald-300">#React</span>
+                    <span class="bg-white/5 px-4 py-2 rounded-lg text-xs font-mono text-purple-300">#PostgreSQL</span>
+                    <span class="bg-white/5 px-4 py-2 rounded-lg text-xs font-mono text-amber-300">#AWS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Análisis de Inversión -->
+    <section id="inversion" class="py-24 px-6 reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-extrabold text-white">Plan de Expansión</h2>
+                <p class="text-slate-400 mt-4">Modelos de escalabilidad financiera.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Plan 1 -->
+                <div class="glass-card p-12 rounded-[2.5rem] border-t-4 border-sky-500 group hover:bg-sky-500/5 transition-colors">
+                    <div class="flex justify-between items-start mb-10">
+                        <div>
+                            <h3 class="text-2xl font-black text-white">Escenario A: Minimo Viable</h3>
+                            <p class="text-sky-400 font-bold">Fase MVP</p>
+                        </div>
+                        <span class="text-4xl font-black text-white">$1,500</span>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-center text-slate-300">
+                            <i class="fas fa-check-circle text-sky-500 mr-4"></i> Producción inicial (500 unid)
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i class="fas fa-check-circle text-sky-500 mr-4"></i> Hosting & Backend TrimTime
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i class="fas fa-check-circle text-sky-500 mr-4"></i> Packaging Eco-Sostenible
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="glass-card p-12 rounded-[2.5rem] border-t-4 border-emerald-500 bg-emerald-500/5">
+                    <div class="flex justify-between items-start mb-10">
+                        <div>
+                            <h3 class="text-2xl font-black text-white">Escenario B: Escala Nacional</h3>
+                            <p class="text-emerald-400 font-bold">Escala Nacional</p>
+                        </div>
+                        <span class="text-4xl font-black text-white">$12,000</span>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-center text-slate-300">
+                            <i class="fas fa-check-circle text-emerald-500 mr-4"></i> Maquinaria de Inyección Automática
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i class="fas fa-check-circle text-emerald-500 mr-4"></i> Sistema de Curado Térmico
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i class="fas fa-check-circle text-emerald-500 mr-4"></i> Marketing Ads Pro & Distribución
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Moderno -->
+    <section id="contacto" class="py-24 px-6 mb-20 reveal">
+        <div class="max-w-6xl mx-auto glass-card rounded-[4rem] p-12 md:p-20 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-sky-500/20 rounded-full blur-[80px]"></div>
+            
+            <div class="grid md:grid-cols-2 gap-16 relative z-10">
+                <div>
+                    <h2 class="text-5xl font-black text-white mb-6">¿Listo para invertir?</h2>
+                    <p class="text-slate-400 text-lg mb-10">Hablemos sobre cómo Aroma Puro y TrimTime pueden generar valor juntos.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center group">
+                            <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-sky-500 transition-colors">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase">Escríbeme</p>
+                                <p class="text-white font-semibold">carlosjpg2300@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center group">
+                            <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-emerald-500 transition-colors">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase">WhatsApp</p>
+                                <p class="text-white font-semibold">+58 412 831 6791</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="Nombre" class="w-full p-4 bg-white/5 border border-white/10 rounded-2xl focus:border-sky-500 focus:bg-white/10 outline-none transition text-white">
+                        <input type="email" placeholder="Email" class="w-full p-4 bg-white/5 border border-white/10 rounded-2xl focus:border-sky-500 focus:bg-white/10 outline-none transition text-white">
+                    </div>
+                    <textarea placeholder="Tu mensaje o propuesta..." class="w-full p-4 bg-white/5 border border-white/10 rounded-2xl focus:border-sky-500 focus:bg-white/10 outline-none transition text-white" rows="5"></textarea>
+                    <button type="submit" class="w-full bg-white text-slate-950 font-black py-5 rounded-2xl hover:bg-sky-400 hover:text-white transition-all transform hover:scale-[1.02] shadow-xl">
+                        ENVIAR PROPUESTA
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-500 border-t border-white/5 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm">© 2026 Aroma Puro. Todos los derechos reservados.</p>
+            <div class="flex space-x-6">
+                <a href="https://github.com/CarlosG2300" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/carlos-antonio-graterol-acasio-583492372/" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/carlosg0808/" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-xs font-mono uppercase tracking-widest text-sky-500/50">TrimTime System v2.4</p>
+        </div>
+    </footer>
+
+    <script>
+        // Efecto de Navegación al hacer Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Animación Reveal al hacer Scroll
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
